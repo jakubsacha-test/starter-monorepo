@@ -18,13 +18,12 @@ jobs:
         uses: ReyahSolutions/matrix-git-generator@v1
         with:
           filters: |
-            services/*/**
+            services/**
 
   build:
     needs: [generate_matrix]
     strategy:
       matrix: ${{fromJson(needs.generate_matrix.outputs.matrix)}}
-      fail-fast: true 
     uses: jakubsacha-test/workflows/.github/workflows/ci-cd-autopromote.yaml@main
     with:
       ref: ${{ github.ref }}
