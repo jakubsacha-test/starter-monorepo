@@ -18,16 +18,20 @@ jobs:
         uses: ReyahSolutions/matrix-git-generator@v1
         with:
           filters: |
-            services/**
-
+            services/*/**
+      - name: debug
+        run: |
+          echo ${{ needs.generate_matrix.outputs.matrix }}
+  
   build:
+    if: needs.generate_matrix.outputs.empty != true
     needs: [generate_matrix]
     strategy:
       matrix: ${{fromJson(needs.generate_matrix.outputs.matrix)}}
     uses: jakubsacha-test/workflows/.github/workflows/ci-cd-autopromote.yaml@main
     with:
       ref: ${{ github.ref }}
-      application-name: ${{ matrix.path }}
+      application-name: "${{ matrix.path }}"
       target-cluster: interface
       # working-dir: ${{ matrix.path }}
   
