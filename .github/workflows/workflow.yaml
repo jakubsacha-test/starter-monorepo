@@ -33,5 +33,5 @@ jobs:
       ref: ${{ github.ref }}
       application-name: "${{ matrix.path }}"
       target-cluster: interface
-      # working-dir: ${{ matrix.path }}
+      working-directory: ${{ matrix.path }}
   
