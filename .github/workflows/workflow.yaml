@@ -15,7 +15,7 @@ jobs:
 
       - name: Generate matrix
         id: generate_matrix
-        uses: ReyahSolutions/matrix-git-generator@v1
+        uses: jakubsacha-test/matrix-git-generator@master
         with:
           filters: |
             services/*/**
