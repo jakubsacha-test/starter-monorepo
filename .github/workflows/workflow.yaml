@@ -31,7 +31,7 @@ jobs:
     uses: jakubsacha-test/workflows/.github/workflows/ci-cd-autopromote.yaml@main
     with:
       ref: ${{ github.ref }}
-      application-name: "${{ matrix.path }}"
+      application-name: "${{ matrix.path }}" #todo: replace with the "application name" derived from the folder structure. btw. Do we even need it?
       target-cluster: interface
       working-directory: ${{ matrix.path }}
   
