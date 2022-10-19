@@ -21,8 +21,8 @@ jobs:
             services/*/**
           depth: 3
           alwaysTriggerDirs: |
-            ci
-            .github/workflows
+            ci/**
+            .github/workflows/**
       - name: debug
         run: |
           echo ${{ steps.generate_matrix.outputs.matrix }}
