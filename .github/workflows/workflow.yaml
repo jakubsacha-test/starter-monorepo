@@ -20,6 +20,9 @@ jobs:
           filters: |
             services/*/**
           depth: 3
+          alwaysTriggerDirs: |
+            ci
+            .github/workflows
       - name: debug
         run: |
           echo ${{ steps.generate_matrix.outputs.matrix }}
