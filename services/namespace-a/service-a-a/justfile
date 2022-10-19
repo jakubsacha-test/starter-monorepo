@@ -1,7 +1,7 @@
 set positional-arguments
 
 build:
-    @echo "building very fast!"
+    @echo "building very, very fast!"
 
 unit-tests:
     @echo "running unit tests"
