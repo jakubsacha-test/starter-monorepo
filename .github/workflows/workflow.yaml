@@ -19,6 +19,7 @@ jobs:
         with:
           filters: |
             services/*/**
+          depth: 3
       - name: debug
         run: |
           echo ${{ steps.generate_matrix.outputs.matrix }}
