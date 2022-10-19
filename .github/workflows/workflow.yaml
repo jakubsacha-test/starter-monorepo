@@ -23,6 +23,7 @@ jobs:
           alwaysTriggerDirs: |
             ci/**
             .github/workflows/**
+          base: main
       - name: debug
         run: |
           echo ${{ steps.generate_matrix.outputs.matrix }}
