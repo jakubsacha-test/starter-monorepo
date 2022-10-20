@@ -24,10 +24,7 @@ jobs:
             ci/**
             .github/workflows/**
           base: main
-      - name: debug
-        run: |
-          echo ${{ steps.generate_matrix.outputs.matrix }}
-
+          
   build:
     if: needs.generate_matrix.outputs.empty != true
     needs: [generate_matrix]
