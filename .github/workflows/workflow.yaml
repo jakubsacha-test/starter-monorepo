@@ -15,7 +15,7 @@ jobs:
 
       - name: Generate matrix
         id: generate_matrix
-        uses: jakubsacha/matrix-git-generator@master
+        uses: jakubsacha/action-matrix-monorepo@master
         with:
           filters: |
             services/*/**
